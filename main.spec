@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('panda.png', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

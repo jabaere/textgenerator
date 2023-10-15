@@ -11,15 +11,20 @@ import os
 
 # Construct the full path to 'panda.png' using a relative path
 # Specify the full path to 'panda.png'
-icon_path = 'C:/Users/frosk/Desktop/generator/panda.png'
+script_dir = os.path.dirname(os.path.abspath(__file__))
+# icon_path = 'C:/Users/frosk/Desktop/generator/panda.png'
+image_path = os.path.join(script_dir, "panda.png")
 # Create the main window
 root = tk.Tk()
 root.title("Text Generator")
 # Load the icon image using the constructed path
-icon_image = tk.PhotoImage(file=icon_path)
+if os.path.exists(image_path):
+    icon_image = tk.PhotoImage(file=image_path)
 
-# Set the window icon
-root.iconphoto(True, icon_image)
+    # Set the window icon
+    root.iconphoto(True, icon_image)
+else:
+    print(f"File not found: {image_path}")
 
 
 # Create a Font object with your custom font family and size
